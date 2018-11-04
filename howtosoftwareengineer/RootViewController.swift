@@ -13,6 +13,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     var pageViewController: UIPageViewController?
 
 
+ //   @IBOutlet weak var move: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -80,6 +81,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         return .mid
     }
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "SignInViewController", sender: self)
+    }
+    
 }
 
