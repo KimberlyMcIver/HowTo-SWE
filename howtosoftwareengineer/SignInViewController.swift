@@ -91,6 +91,8 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func continueAsGuestButtonTapped(_ sender: UIButton) {
+      //  self.performSegue(withIdentifier: "goToMainScreen", sender: self)
+        self.performSegue(withIdentifier: "PageVC1", sender: self)
     }
     
 }

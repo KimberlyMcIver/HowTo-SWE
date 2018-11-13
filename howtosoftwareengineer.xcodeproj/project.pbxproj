@@ -14,6 +14,7 @@
 		3B04D8552182C98F003C66A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8532182C98F003C66A3 /* Main.storyboard */; };
 		3B04D8572182C9A4003C66A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8562182C9A4003C66A3 /* Assets.xcassets */; };
 		3B04D85A2182C9A4003C66A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8582182C9A4003C66A3 /* LaunchScreen.storyboard */; };
+		3B7A097C219A7E2000915727 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A097B219A7E2000915727 /* RootPageViewController.swift */; };
 		3BC786612182CCE800E43755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BC786602182CCE800E43755 /* GoogleService-Info.plist */; };
 		7F48847857CE0CABBF1A6602 /* Pods_howtosoftwareengineer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32559C5559773D374FE5B0D /* Pods_howtosoftwareengineer.framework */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		3B04D8562182C9A4003C66A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B04D8592182C9A4003C66A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B04D85B2182C9A4003C66A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B7A097B219A7E2000915727 /* RootPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
 		3BC786602182CCE800E43755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61226901E67EA0AD4151AF98 /* Pods-howtosoftwareengineer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-howtosoftwareengineer.release.xcconfig"; path = "Pods/Target Support Files/Pods-howtosoftwareengineer/Pods-howtosoftwareengineer.release.xcconfig"; sourceTree = "<group>"; };
 		E32559C5559773D374FE5B0D /* Pods_howtosoftwareengineer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_howtosoftwareengineer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				3B04D8582182C9A4003C66A3 /* LaunchScreen.storyboard */,
 				3BC786602182CCE800E43755 /* GoogleService-Info.plist */,
 				3B04D85B2182C9A4003C66A3 /* Info.plist */,
+				3B7A097B219A7E2000915727 /* RootPageViewController.swift */,
 			);
 			path = howtosoftwareengineer;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				3B04D84E2182C98F003C66A3 /* RootViewController.swift in Sources */,
 				3B04D8522182C98F003C66A3 /* ModelController.swift in Sources */,
+				3B7A097C219A7E2000915727 /* RootPageViewController.swift in Sources */,
 				3B04D8502182C98F003C66A3 /* SignInViewController.swift in Sources */,
 				3B04D84C2182C98F003C66A3 /* AppDelegate.swift in Sources */,
 			);
