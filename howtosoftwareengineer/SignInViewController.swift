@@ -38,7 +38,7 @@ class SignInViewController: UIViewController {
 
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
         
-        //Flip the boolean
+        // Flip the boolean
         isSignIn = !isSignIn
         
         // Check the boolean and set the buttons and labels
@@ -64,7 +64,7 @@ class SignInViewController: UIViewController {
                     // Check that user isn't nil
                     if let u = user {
                         // user is found, go to main screen
-                        self.performSegue(withIdentifier: "goToMainScreen", sender: self)
+                        self.performSegue(withIdentifier: "goToSwipe", sender: self)
                     } else {
                         // Error: check error and show message
                     }
@@ -76,7 +76,7 @@ class SignInViewController: UIViewController {
                     // Check that user isn't nil
                     if let u = user {
                         // User is found, go to main screen
-                        self.performSegue(withIdentifier: "goToMainScreen", sender: self)
+                        self.performSegue(withIdentifier: "goToSwipe", sender: self)
                     } else {
                         // Error: check error and show message
                     }
@@ -87,12 +87,19 @@ class SignInViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //  Dismiss the keyboard when the view is tapped on
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+    
     @IBAction func forgotPassButtonTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToForgotPassword", sender: self)
     }
     
     @IBAction func continueAsGuestButtonTapped(_ sender: UIButton) {
       //  self.performSegue(withIdentifier: "goToMainScreen", sender: self)
-        self.performSegue(withIdentifier: "PageVC1", sender: self)
+        self.performSegue(withIdentifier: "goToSwipe", sender: self)
     }
     
 }
