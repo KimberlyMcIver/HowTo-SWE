@@ -77,7 +77,7 @@
         <scene sceneID="hui-Vf-RUM">
             <objects>
                 <viewController storyboardIdentifier="CareerProgressionVC" id="AYN-OQ-HEq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="coq-FE-haE">
+                    <view key="view" contentMode="scaleToFill" id="coq-FE-haE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -241,38 +241,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubA-2J-Yu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2281" y="-1048"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="clB-vc-fyl">
-            <objects>
-                <viewController id="703-4V-yAM" customClass="RootViewController" customModule="howtosoftwareengineer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-IZ-ou1">
-                                <rect key="frame" x="144" y="224" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tag-6H-P09">
-                                <rect key="frame" x="144" y="287" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="703-4V-yAM" eventType="touchUpInside" id="exn-fo-8eb"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.5067976099" green="0.81656984990000003" blue="0.6014546918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="iAZ-4m-2z3"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-101" y="-243"/>
         </scene>
         <!--Root Page View Controller-->
         <scene sceneID="2PZ-mW-N20">
@@ -533,7 +501,6 @@
                         <outlet property="backButton" destination="aTj-uV-QVL" id="2XN-W7-LRX"/>
                         <outlet property="forgotPasswordLabel" destination="Oh5-sX-oLG" id="6ea-Rk-jje"/>
                         <outlet property="resetPasswordButton" destination="pCy-4I-5ya" id="veN-GF-BJc"/>
-                        <segue destination="S4R-Ja-viH" kind="show" identifier="goToSignIn" id="gdA-rD-i1S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytr-cU-4wY" userLabel="First Responder" sceneMemberID="firstResponder"/>
