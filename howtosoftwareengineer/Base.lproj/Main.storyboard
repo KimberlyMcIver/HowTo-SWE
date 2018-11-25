@@ -265,20 +265,6 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="674"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eCK-zB-Nha">
-                                        <rect key="frame" x="127" y="57" width="121" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="121" id="MNh-Xi-xg5"/>
-                                            <constraint firstAttribute="height" constant="28" id="NqX-q4-3da"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="Sign In"/>
-                                            <segment title="Register"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="signInSelectorChanged:" destination="S4R-Ja-viH" eventType="valueChanged" id="CBj-lw-Ufy"/>
-                                        </connections>
-                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your details below to log in." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W0-i4-158">
                                         <rect key="frame" x="80" y="298" width="215" height="17"/>
                                         <constraints>
@@ -357,10 +343,10 @@
                                 <color key="backgroundColor" red="0.50679760990413059" green="0.81656984992595538" blue="0.60145469175333699" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="top" secondItem="0W0-i4-158" secondAttribute="bottom" constant="33" id="2RP-2n-uAM"/>
+                                    <constraint firstItem="njI-Tp-9gx" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="top" constant="110" id="5hB-Uh-Max"/>
                                     <constraint firstItem="0W0-i4-158" firstAttribute="top" secondItem="NI7-PP-m9r" secondAttribute="bottom" constant="23" id="6xQ-52-APU"/>
                                     <constraint firstAttribute="bottom" secondItem="wy0-Bi-8Xa" secondAttribute="bottom" constant="33" id="A5F-rh-27n"/>
                                     <constraint firstItem="ANl-xi-WDY" firstAttribute="top" secondItem="CWi-LH-zGd" secondAttribute="bottom" constant="37" id="AyN-L1-boc"/>
-                                    <constraint firstItem="ANl-xi-WDY" firstAttribute="trailing" secondItem="eCK-zB-Nha" secondAttribute="trailing" id="FE9-SC-shf"/>
                                     <constraint firstItem="NI7-PP-m9r" firstAttribute="top" secondItem="njI-Tp-9gx" secondAttribute="bottom" constant="21" id="I2x-OF-iRo"/>
                                     <constraint firstItem="fO8-0R-SLb" firstAttribute="centerX" secondItem="0W0-i4-158" secondAttribute="centerX" id="JOO-Lr-q7i"/>
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="leading" secondItem="CWi-LH-zGd" secondAttribute="leading" id="JrR-32-Dre"/>
@@ -370,7 +356,6 @@
                                     <constraint firstItem="CWi-LH-zGd" firstAttribute="top" secondItem="6iC-6U-a2n" secondAttribute="bottom" constant="8" symbolic="YES" id="NaU-rt-me1"/>
                                     <constraint firstItem="njI-Tp-9gx" firstAttribute="centerX" secondItem="0W0-i4-158" secondAttribute="centerX" id="OKn-dl-gd9"/>
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="centerX" secondItem="ANl-xi-WDY" secondAttribute="centerX" id="RfO-F1-RN0"/>
-                                    <constraint firstItem="NI7-PP-m9r" firstAttribute="centerX" secondItem="eCK-zB-Nha" secondAttribute="centerX" id="UlP-iR-dET"/>
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="centerX" secondItem="0W0-i4-158" secondAttribute="centerX" id="e8H-XK-lgK"/>
                                     <constraint firstAttribute="trailing" secondItem="NI7-PP-m9r" secondAttribute="trailing" constant="136" id="fCo-wy-auX"/>
                                     <constraint firstItem="njI-Tp-9gx" firstAttribute="leading" secondItem="s1b-V9-EN7" secondAttribute="leadingMargin" constant="122" id="fR1-6L-ojM"/>
@@ -378,8 +363,6 @@
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="centerX" secondItem="wy0-Bi-8Xa" secondAttribute="centerX" id="hBT-6Y-L34"/>
                                     <constraint firstItem="wy0-Bi-8Xa" firstAttribute="leading" secondItem="s1b-V9-EN7" secondAttribute="leading" constant="65" id="i3h-9y-eop"/>
                                     <constraint firstItem="fO8-0R-SLb" firstAttribute="top" secondItem="CWi-LH-zGd" secondAttribute="bottom" constant="8" symbolic="YES" id="i7Q-eJ-vG6"/>
-                                    <constraint firstItem="eCK-zB-Nha" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="top" constant="57" id="iFS-En-gmO"/>
-                                    <constraint firstItem="njI-Tp-9gx" firstAttribute="top" secondItem="eCK-zB-Nha" secondAttribute="bottom" constant="25" id="jRr-SA-Co1"/>
                                     <constraint firstItem="NI7-PP-m9r" firstAttribute="leading" secondItem="s1b-V9-EN7" secondAttribute="leading" constant="136" id="sLR-bN-8Uh"/>
                                     <constraint firstItem="njI-Tp-9gx" firstAttribute="leading" secondItem="s1b-V9-EN7" secondAttribute="leading" constant="129" id="xqt-eL-gxo"/>
                                     <constraint firstItem="6iC-6U-a2n" firstAttribute="trailing" secondItem="CWi-LH-zGd" secondAttribute="trailing" id="yv5-AR-4hi"/>
@@ -400,7 +383,6 @@
                         <outlet property="emailTextField" destination="6iC-6U-a2n" id="Q0g-kB-0yS"/>
                         <outlet property="logInButton" destination="fO8-0R-SLb" id="SON-ST-Okf"/>
                         <outlet property="passwordTextField" destination="CWi-LH-zGd" id="TNQ-6V-MAl"/>
-                        <outlet property="signInSelector" destination="eCK-zB-Nha" id="G9T-wY-QfI"/>
                         <outlet property="welcomeBackLabel" destination="njI-Tp-9gx" id="oAO-72-luN"/>
                         <segue destination="g1v-Oh-iDj" kind="show" identifier="goToSwipe" id="dU2-Pa-seN"/>
                         <segue destination="xfr-Vl-0Fa" kind="show" id="REw-ij-Nut"/>
@@ -444,7 +426,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCy-4I-5ya">
-                                <rect key="frame" x="126" y="379" width="122" height="33"/>
+                                <rect key="frame" x="126" y="317" width="122" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Reset Password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -629,6 +611,9 @@
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="5RJ-ch-HtQ" eventType="touchUpInside" id="tX9-2f-36Q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
@@ -637,7 +622,11 @@
                         <viewLayoutGuide key="safeArea" id="ibb-Lu-E4s"/>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="ENe-1t-3BW" id="ESh-2T-mQe"/>
+                        <outlet property="passwordTextField" destination="Yma-DI-gd3" id="E5r-ML-9UH"/>
                         <outlet property="scrollView" destination="mi7-f2-S6g" id="SkL-Hr-G6X"/>
+                        <outlet property="signUpButton" destination="yHN-bJ-ogE" id="e6e-Tp-5pz"/>
+                        <segue destination="g1v-Oh-iDj" kind="show" identifier="goToSwipeVC" id="Tq9-If-T8y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="af4-CZ-ZoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -652,5 +641,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="v0J-cx-CrI"/>
         <segue reference="mbN-I3-3Dh"/>
+        <segue reference="dU2-Pa-seN"/>
     </inferredMetricsTieBreakers>
 </document>
