@@ -11,17 +11,13 @@ import Firebase
 import FirebaseAuth
 
 class SignInViewController: UIViewController {
-
-   @IBOutlet weak var dataLabel: UILabel!
    var dataObject: String = ""
-
 
     @IBOutlet weak var signInSelector: UISegmentedControl!
     @IBOutlet weak var welcomeBackLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var forgotPassworButton: UIButton!
     @IBOutlet weak var continueAsGuestButton: UIButton!
     
     var isSignIn: Bool = true
@@ -33,7 +29,13 @@ class SignInViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.dataLabel!.text = dataObject
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Show the navigation bar on other view controllers
+        self.navigationController?.isNavigationBarHidden = false;
     }
 
     @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
@@ -93,9 +95,6 @@ class SignInViewController: UIViewController {
         passwordTextField.resignFirstResponder()
     }
     
-    @IBAction func forgotPassButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToForgotPassword", sender: self)
-    }
     
     @IBAction func continueAsGuestButtonTapped(_ sender: UIButton) {
       //  self.performSegue(withIdentifier: "goToMainScreen", sender: self)
