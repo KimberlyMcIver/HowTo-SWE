@@ -622,10 +622,17 @@
                         <viewLayoutGuide key="safeArea" id="ibb-Lu-E4s"/>
                     </view>
                     <connections>
+                        <outlet property="desiredSkillsTextField" destination="t56-a5-sgv" id="TSo-EL-Bld"/>
                         <outlet property="emailTextField" destination="ENe-1t-3BW" id="ESh-2T-mQe"/>
+                        <outlet property="firstNameTextField" destination="I7J-rs-z6P" id="jZa-xb-vGP"/>
+                        <outlet property="lastNameTextField" destination="SLM-Dk-a8c" id="ldC-en-npR"/>
+                        <outlet property="locationTextField" destination="SKF-WI-Kgy" id="kDp-8r-FvH"/>
+                        <outlet property="mentorMenteeTextField" destination="t49-ml-Izp" id="22g-wU-WxD"/>
                         <outlet property="passwordTextField" destination="Yma-DI-gd3" id="E5r-ML-9UH"/>
+                        <outlet property="schoolOccupationTextField" destination="gYd-GG-FHP" id="pnW-dC-qTd"/>
                         <outlet property="scrollView" destination="mi7-f2-S6g" id="SkL-Hr-G6X"/>
                         <outlet property="signUpButton" destination="yHN-bJ-ogE" id="e6e-Tp-5pz"/>
+                        <outlet property="skillsTextField" destination="gw2-pj-Tpo" id="zmj-Ye-xrs"/>
                         <segue destination="g1v-Oh-iDj" kind="show" identifier="goToSwipeVC" id="Tq9-If-T8y"/>
                     </connections>
                 </viewController>
@@ -641,6 +648,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="v0J-cx-CrI"/>
         <segue reference="mbN-I3-3Dh"/>
-        <segue reference="dU2-Pa-seN"/>
+        <segue reference="Tq9-If-T8y"/>
     </inferredMetricsTieBreakers>
 </document>
