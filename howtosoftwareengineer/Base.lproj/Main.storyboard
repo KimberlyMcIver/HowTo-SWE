@@ -244,38 +244,71 @@
             </objects>
             <point key="canvasLocation" x="240.80000000000001" y="-1043.0284857571214"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="cpH-i2-n0g">
             <objects>
-                <viewController storyboardIdentifier="MainScreenVC" id="v5p-ZL-hEH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainScreenVC" id="v5p-ZL-hEH" customClass="MainScreenViewController" customModule="howtosoftwareengineer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MCG-e5-fFQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnS-uo-ouE">
-                                <rect key="frame" x="135" y="323" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-1U-icy">
                                 <rect key="frame" x="168" y="630" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.4677066144" green="1" blue="0.2888439129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hg3-JC-oyn">
+                                <rect key="frame" x="0.0" y="58" width="375" height="579"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="117" id="Uvd-gS-UQ6" customClass="ArticleCell" customModule="howtosoftwareengineer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uvd-gS-UQ6" id="Z1I-Ow-isG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSS-Qb-Wdy">
+                                                    <rect key="frame" x="15" y="0.0" width="102" height="111"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amazon’s newest service uses machine learning to extract medical data from patient records" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBM-31-1KG">
+                                                    <rect key="frame" x="125" y="0.0" width="235" height="47"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zo-pw-Gg6">
+                                                    <rect key="frame" x="125" y="43" width="235" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <string key="text">Amazon has launched a new service that uses machine learning to extract key data from patient records and can potentially help healthcare providers and researchers save money, make treatment decisions, and manage clinical trials. The company announced the ser…"</string>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="8Zo-pw-Gg6" id="Zml-pi-fUy"/>
+                                            <outlet property="titleLabel" destination="PBM-31-1KG" id="xoJ-6d-cNe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.75297471385761594" green="0.7964094883419689" blue="0.77717870489127427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="bnS-uo-ouE" firstAttribute="centerX" secondItem="MCG-e5-fFQ" secondAttribute="centerX" id="2VB-M6-3Ts"/>
-                            <constraint firstItem="bnS-uo-ouE" firstAttribute="centerY" secondItem="MCG-e5-fFQ" secondAttribute="centerY" id="LfC-P7-fL0"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Bt0-HZ-pRR"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hg3-JC-oyn" id="zuN-J0-9KI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEQ-NV-rC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="-1045"/>
+            <point key="canvasLocation" x="928.79999999999995" y="-1045.7271364317842"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="b4o-i3-Q1c">
