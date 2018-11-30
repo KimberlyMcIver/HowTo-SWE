@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var forgotPasswordLabel: UILabel!
     
     @IBOutlet weak var resetPasswordButton: UIButton!
+    
+    @IBOutlet weak var emailTextFieldForgotPass: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +30,26 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func signOutButtonTapped(_ sender: UIButton){
-       // self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-        print("we made it")
+    
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error siging out: %@", signOutError)
+        }
+        
+       self.performSegue(withIdentifier: "goBackToSignInFromSignOut", sender: self)
+        print("sign out sucessful")
     }
+    
+    @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
+       // let email = emailTextField2.text
+
+        //        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+//            <#code#>
+//        }
+    }
+    
     
 }

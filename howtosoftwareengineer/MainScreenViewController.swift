@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+
 
 class MainScreenViewController: UIViewController, UITableViewDataSource {
 
@@ -18,8 +20,9 @@ class MainScreenViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         tableView.dataSource = self
+        //ttps://newsapi.org/v2/everything?sources=techcrunch&apiKey=d65fb8f01d8e42c7b106590d09149d39
         
-        let url = URL(string: "https://newsapi.org/v2/everything?sources=techcrunch&apiKey=d65fb8f01d8e42c7b106590d09149d39")!
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=d65fb8f01d8e42c7b106590d09149d39")!
         
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -30,7 +33,7 @@ class MainScreenViewController: UIViewController, UITableViewDataSource {
                 print(error.localizedDescription)
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let articles = dataDictionary["results"] as! [[String: Any]]
+                guard let articles = dataDictionary["articles"] as? [[String: Any]] else {return}
                 self.articles = articles
                 self.tableView.reloadData()
                 }
@@ -50,6 +53,14 @@ class MainScreenViewController: UIViewController, UITableViewDataSource {
         
         cell.titleLabel.text = title
         cell.descriptionLabel.text = description
+        
+        let articlePathString = article["urlToImage"] as! String
+        let baseURLString = "https://techcrunch.com/wp-content/uploads"
+        let articleURL = URL(string: articlePathString)!
+        cell.articleImageView.af_setImage(withURL: articleURL)
+        
+        //ttps://techcrunch.com/wp-content/uploads/2018/11/GettyImages-514816812.jpg?w=622
+        //ttps://techcrunch.com/wp-content/uploads/2018/11/GettyImages-461952906.jpg?w=600
         
         return cell
     }

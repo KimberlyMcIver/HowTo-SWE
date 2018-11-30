@@ -10,6 +10,8 @@ target 'howtosoftwareengineer' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage', '~> 3.5'
+  pod "MDCSwipeToChoose"
 
 end
