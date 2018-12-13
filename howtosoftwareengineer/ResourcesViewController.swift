@@ -64,7 +64,6 @@ class ResourcesViewController: UIViewController, UITableViewDataSource {
         cell.titleLabel.text = title
         cell.descriptionLabel.text = description
         
-        
         return cell
     }
 

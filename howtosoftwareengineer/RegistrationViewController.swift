@@ -31,7 +31,7 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
+        ref = Database.database().reference().child("users")
         
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
     }
@@ -50,13 +50,14 @@ class RegistrationViewController: UIViewController {
                     let userID = Auth.auth().currentUser?.uid
                     self.ref?.child(userID!).child("firstName").setValue(self.firstNameTextField.text)
                     self.ref?.child(userID!).child("lastName").setValue(self.lastNameTextField.text)
-                self.ref?.child(userID!).child("schoolOccupation").setValue(self.schoolOccupationTextField.text)
+                    self.ref?.child(userID!).child("schoolOccupation").setValue(self.schoolOccupationTextField.text)
                     self.ref?.child(userID!).child("location").setValue(self.locationTextField.text)
                     self.ref?.child(userID!).child("skills").setValue(self.skillsTextField.text)
-                self.ref?.child(userID!).child("desiredSkills").setValue(self.desiredSkillsTextField.text)
-                self.ref?.child(userID!).child("mentorOrMentee").setValue(self.mentorMenteeTextField.text)
+                    self.ref?.child(userID!).child("desiredSkills").setValue(self.desiredSkillsTextField.text)
+                    self.ref?.child(userID!).child("mentorOrMentee").setValue(self.mentorMenteeTextField.text)
                     
                     self.performSegue(withIdentifier: "goToSwipeVC", sender: self)
+                    
                 } else {
                     // Error: check error and show message
                     let alert = UIAlertController(title: "Unable to create account", message: "Check that all information provided is correct, and try again", preferredStyle: UIAlertController.Style.alert)

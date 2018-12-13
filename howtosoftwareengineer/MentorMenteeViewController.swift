@@ -8,35 +8,61 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var userCollection: UICollectionView!
     
     var images = [UIImage]()
-    
-    
+    var usersList = [UserModel]()
+    var ref: DatabaseReference?
+    var databaseHandle: DatabaseHandle?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadImages()
-    
+        
+        ref = Database.database().reference().child("users")
+        ref?.observe(.value, with: { (snapshot) in   // change to user added
+            if snapshot.childrenCount > 0 {
+                for users in snapshot.children.allObjects as![DataSnapshot] {
+                    let userObject = users.value as? [String: AnyObject]
+                    let userFirstName = userObject?["firstName"]
+                    let userLastName = userObject?["lastName"]
+                    let userOccupation = userObject?["schoolOccupation"]
+                    let userSkills = userObject?["skills"]
+                    let userDesiredSkills = userObject?["desiredSkills"]
+                    let userLocation = userObject?["location"]
+                    let userMentorOrMentee = userObject?["mentorOrMentee"]
+                    
+                    let user = UserModel(firstName: userFirstName as! String?, lastName: userLastName as! String?, schoolOccupation: userOccupation as! String?, location: userLocation as! String?, skills: userSkills as! String?, desiredSkills: userDesiredSkills as! String?, mentorOrMentee: userMentorOrMentee as! String?)
+                    
+                    self.usersList.append(user)
+                }
+                self.userCollection.reloadData()
+            }
+            
+        })
+        
     }
     
     func loadImages() {
+        images.append(UIImage(named: "woman")!)
+        images.append(UIImage(named: "woman4")!)
         images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
-        images.append(UIImage(named: "Carlosheadshot")!)
+        images.append(UIImage(named: "man")!)
+        images.append(UIImage(named: "man4")!)
+        images.append(UIImage(named: "man1")!)
+        images.append(UIImage(named: "woman1")!)
+        images.append(UIImage(named: "man3")!)
+        images.append(UIImage(named: "kim10")!)
         self.userCollection.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return usersList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,8 +71,17 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
         let image = images[indexPath.row]
         
         cell.imageView.image = image
-        return cell
         
+        let user: UserModel
+        user = usersList[indexPath.row]
+        cell.nameLabel.text = user.firstName
+        cell.occupationLabel.text = user.schoolOccupation
+        cell.skillsLabel.text = user.skills
+        cell.desiredSkillsLabel.text = user.desiredSkills
+        cell.locationLabel.text = user.location
+        cell.mentorMenteeLabel.text = user.mentorOrMentee
+        
+        return cell
     }
 
 }

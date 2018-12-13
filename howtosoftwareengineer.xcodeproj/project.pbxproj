@@ -14,6 +14,7 @@
 		3B04D8552182C98F003C66A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8532182C98F003C66A3 /* Main.storyboard */; };
 		3B04D8572182C9A4003C66A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8562182C9A4003C66A3 /* Assets.xcassets */; };
 		3B04D85A2182C9A4003C66A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B04D8582182C9A4003C66A3 /* LaunchScreen.storyboard */; };
+		3B14E7C021C205D60065DF48 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14E7BF21C205D60065DF48 /* UserModel.swift */; };
 		3B6282BD21AA67990081AA35 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282BC21AA67990081AA35 /* RegistrationViewController.swift */; };
 		3B6282BF21AA785F0081AA35 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282BE21AA785F0081AA35 /* ResourcesViewController.swift */; };
 		3B6282C121AE6DB70081AA35 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282C021AE6DB70081AA35 /* MainScreenViewController.swift */; };
@@ -37,6 +38,7 @@
 		3B04D8562182C9A4003C66A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B04D8592182C9A4003C66A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B04D85B2182C9A4003C66A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B14E7BF21C205D60065DF48 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3B6282BC21AA67990081AA35 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3B6282BE21AA785F0081AA35 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		3B6282C021AE6DB70081AA35 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				3B04D84F2182C98F003C66A3 /* SignInViewController.swift */,
 				3B04D8512182C98F003C66A3 /* ModelController.swift */,
 				3B04D8532182C98F003C66A3 /* Main.storyboard */,
+				3B14E7BF21C205D60065DF48 /* UserModel.swift */,
 				3B04D8562182C9A4003C66A3 /* Assets.xcassets */,
 				3B04D8582182C9A4003C66A3 /* LaunchScreen.storyboard */,
 				3BC786602182CCE800E43755 /* GoogleService-Info.plist */,
@@ -257,6 +260,7 @@
 				3B7A097C219A7E2000915727 /* RootPageViewController.swift in Sources */,
 				3B6282BD21AA67990081AA35 /* RegistrationViewController.swift in Sources */,
 				3B04D8502182C98F003C66A3 /* SignInViewController.swift in Sources */,
+				3B14E7C021C205D60065DF48 /* UserModel.swift in Sources */,
 				3B770A0121B12E0D008442C4 /* ResourceCell.swift in Sources */,
 				3B04D84C2182C98F003C66A3 /* AppDelegate.swift in Sources */,
 				3B6282C321AE82F00081AA35 /* ArticleCell.swift in Sources */,
