@@ -12,9 +12,7 @@ import FirebaseAuth
 class ForgotPasswordViewController: UIViewController {
 
     @IBOutlet weak var forgotPasswordLabel: UILabel!
-    
     @IBOutlet weak var resetPasswordButton: UIButton!
-    
     @IBOutlet weak var emailTextFieldForgotPass: UITextField!
     
     
