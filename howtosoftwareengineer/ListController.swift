@@ -21,6 +21,24 @@ class ListController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
         fetchUser()
+        
+       // observeMessages()
+    }
+    
+    func observeMessages() {
+        let ref = Database.database().reference().child("messages")
+        ref.observe(.childAdded, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let message = Message()
+                message.setValuesForKeys(dictionary)
+                print(message.text)
+                
+            }
+            
+          //  print(snapshot)
+            
+        }, withCancel: nil)
     }
     
     func fetchUser() {
@@ -28,6 +46,7 @@ class ListController: UITableViewController {
             
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
+                
                 let userFirstName = dictionary["firstName"]
                 let userLastName = dictionary["lastName"]
                 let userOccupation = dictionary["schoolOccupation"]
@@ -37,6 +56,7 @@ class ListController: UITableViewController {
                 let userMentorOrMentee = dictionary["mentorOrMentee"]
                 
                 let user = UserModel(firstName: userFirstName as! String?, lastName: userLastName as! String?, schoolOccupation: userOccupation as! String?, location: userLocation as! String?, skills: userSkills as! String?, desiredSkills: userDesiredSkills as! String?, mentorOrMentee: userMentorOrMentee as! String?)
+                user.id = snapshot.key
                 
                 self.users.append(user)
                 
@@ -45,14 +65,13 @@ class ListController: UITableViewController {
                 }
                 print(user.firstName)
             }
-            //print(snapshot)
         }, withCancel: nil)
     }
     
-    func showChatController() {
+    func showChatControllerForUser(user: UserModel) {
         let chatLogController = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatLogController.user = user
         navigationController?.pushViewController(chatLogController, animated: true)
-        print(123)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,9 +90,8 @@ class ListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected cell")
-        showChatController()
-        
+        let user = self.users[indexPath.row]
+        showChatControllerForUser(user: user)
     }
 }
 
