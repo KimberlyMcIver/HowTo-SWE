@@ -18,6 +18,7 @@
 		3B14E7C221C2F05D0065DF48 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14E7C121C2F05D0065DF48 /* ChatLogViewController.swift */; };
 		3B3654E821C37FBB0025D4B9 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3654E721C37FBB0025D4B9 /* ListController.swift */; };
 		3B3654EA21C4307C0025D4B9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3654E921C4307C0025D4B9 /* Message.swift */; };
+		3B3654EC21C4436C0025D4B9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3654EB21C4436C0025D4B9 /* ChatMessageCell.swift */; };
 		3B6282BD21AA67990081AA35 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282BC21AA67990081AA35 /* RegistrationViewController.swift */; };
 		3B6282BF21AA785F0081AA35 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282BE21AA785F0081AA35 /* ResourcesViewController.swift */; };
 		3B6282C121AE6DB70081AA35 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6282C021AE6DB70081AA35 /* MainScreenViewController.swift */; };
@@ -45,6 +46,7 @@
 		3B14E7C121C2F05D0065DF48 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		3B3654E721C37FBB0025D4B9 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		3B3654E921C4307C0025D4B9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		3B3654EB21C4436C0025D4B9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		3B6282BC21AA67990081AA35 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3B6282BE21AA785F0081AA35 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		3B6282C021AE6DB70081AA35 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				3B770A0421B13C5B008442C4 /* ImageCollectionViewCell.swift */,
 				3B3654E721C37FBB0025D4B9 /* ListController.swift */,
 				3B3654E921C4307C0025D4B9 /* Message.swift */,
+				3B3654EB21C4436C0025D4B9 /* ChatMessageCell.swift */,
 			);
 			path = howtosoftwareengineer;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				3B04D84C2182C98F003C66A3 /* AppDelegate.swift in Sources */,
 				3B6282C321AE82F00081AA35 /* ArticleCell.swift in Sources */,
 				3B770A0321B13840008442C4 /* MentorMenteeViewController.swift in Sources */,
+				3B3654EC21C4436C0025D4B9 /* ChatMessageCell.swift in Sources */,
 				3B6282C121AE6DB70081AA35 /* MainScreenViewController.swift in Sources */,
 				3B3654E821C37FBB0025D4B9 /* ListController.swift in Sources */,
 			);

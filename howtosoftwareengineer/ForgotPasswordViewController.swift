@@ -47,6 +47,8 @@ class ForgotPasswordViewController: UIViewController {
         //        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
 //            <#code#>
 //        }
+        
+        print("reset tapped")
     }
     
     

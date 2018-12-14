@@ -30,7 +30,7 @@ class ListController: UITableViewController {
         ref.observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject] {
-                let message = Message()
+                let message = Message(dictionary: dictionary)
                 message.setValuesForKeys(dictionary)
                 print(message.text)
                 
