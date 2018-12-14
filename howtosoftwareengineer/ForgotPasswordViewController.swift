@@ -42,13 +42,12 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
-       // let email = emailTextField2.text
+    
+        if let email = emailTextFieldForgotPass.text{
 
-        //        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-//            <#code#>
-//        }
+            Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
         
-        print("reset tapped")
+        }
     }
     
     
