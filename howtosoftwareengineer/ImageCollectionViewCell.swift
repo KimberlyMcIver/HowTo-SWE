@@ -16,6 +16,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var desiredSkillsLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var mentorMenteeLabel: UILabel!
+    @IBOutlet weak var messageButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     

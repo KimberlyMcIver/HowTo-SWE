@@ -48,6 +48,11 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
         
     }
     
+    @IBAction func messageButtonTapped(_ sender: UIButton) {
+        //showChatControllerForUser()
+        self.performSegue(withIdentifier: "showList", sender: self)
+    }
+    
     func loadImages() {
         images.append(UIImage(named: "woman")!)
         images.append(UIImage(named: "woman4")!)
@@ -59,6 +64,16 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
         images.append(UIImage(named: "man3")!)
         images.append(UIImage(named: "kim10")!)
         self.userCollection.reloadData()
+    }
+    
+    func showChatControllerForUser() {
+        let vc = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.present(vc, animated: false, completion: nil)
+        
+        //let chatLogController = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        //navigationController?.pushViewController(chatLogController, animated: true)
+        
+        //self.performSegue(withIdentifier: "goBackToSignInFromSignOut", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -82,6 +97,20 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
         cell.mentorMenteeLabel.text = user.mentorOrMentee
         
         return cell
+    }
+    
+   // var messagesController: MessagesController?
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectRowAtIndexPath indexPath: IndexPath) {
+//        dismiss(animated: true){
+//            print("Dismiss completed")
+//        }
+//      //  let user = self.users[indexPath.row]
+//       // self.messag
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
+        print("Did Select")
     }
 
 }
