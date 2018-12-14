@@ -56,8 +56,8 @@ class MainScreenViewController: UIViewController, UITableViewDataSource {
         
         let articlePathString = article["urlToImage"] as! String
         //let baseURLString = "https://techcrunch.com/wp-content/uploads"
-       // let articleURL = URL(string: articlePathString)!
-       // cell.articleImageView.af_setImage(withURL: articleURL)
+        let articleURL = URL(string: articlePathString)!
+        cell.articleImageView.af_setImage(withURL: articleURL)
 
         return cell
     }
