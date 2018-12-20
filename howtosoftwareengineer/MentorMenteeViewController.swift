@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
+class MentorMenteeViewController: UIViewController, UICollectionViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var userCollection: UICollectionView!
     
@@ -18,11 +18,16 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
     var usersList = [UserModel]()
     var ref: DatabaseReference?
     var databaseHandle: DatabaseHandle?
-  
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredUserList = [UserModel]()
+    var searching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadImages()
+        searchBar?.placeholder = "Search Users"
         
         ref = Database.database().reference().child("users")
         ref?.observe(.value, with: { (snapshot) in   // change to user added
@@ -43,13 +48,10 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
                 }
                 self.userCollection.reloadData()
             }
-            
         })
-        
     }
     
     @IBAction func messageButtonTapped(_ sender: UIButton) {
-        //showChatControllerForUser()
         self.performSegue(withIdentifier: "showList", sender: self)
     }
     
@@ -69,48 +71,73 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource {
     func showChatControllerForUser() {
         let vc = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
         self.present(vc, animated: false, completion: nil)
-        
-        //let chatLogController = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        //navigationController?.pushViewController(chatLogController, animated: true)
-        
-        //self.performSegue(withIdentifier: "goBackToSignInFromSignOut", sender: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return usersList.count
+        if searching {
+            return filteredUserList.count
+        } else {
+            return usersList.count
+        }
+       // return usersList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = userCollection.dequeueReusableCell(withReuseIdentifier: "MiniCell", for: indexPath) as! ImageCollectionViewCell
         let image = images[indexPath.row]
-        
         cell.imageView.image = image
         
-        let user: UserModel
-        user = usersList[indexPath.row]
-        cell.nameLabel.text = user.firstName
-        cell.occupationLabel.text = user.schoolOccupation
-        cell.skillsLabel.text = user.skills
-        cell.desiredSkillsLabel.text = user.desiredSkills
-        cell.locationLabel.text = user.location
-        cell.mentorMenteeLabel.text = user.mentorOrMentee
+        if searching {
+            let user: UserModel
+            user = filteredUserList[indexPath.row]
+
+            cell.nameLabel.text = user.firstName
+            cell.occupationLabel.text = user.schoolOccupation
+            cell.skillsLabel.text = user.skills
+            cell.desiredSkillsLabel.text = user.desiredSkills
+            cell.locationLabel.text = user.location
+            cell.mentorMenteeLabel.text = user.mentorOrMentee
+            
+        } else {
+            let user: UserModel
+            user = usersList[indexPath.row]
+            cell.nameLabel.text = user.firstName
+            cell.occupationLabel.text = user.schoolOccupation
+            cell.skillsLabel.text = user.skills
+            cell.desiredSkillsLabel.text = user.desiredSkills
+            cell.locationLabel.text = user.location
+            cell.mentorMenteeLabel.text = user.mentorOrMentee
+        }
         
+//        let user: UserModel
+//        user = usersList[indexPath.row]
+//        cell.nameLabel.text = user.firstName
+//        cell.occupationLabel.text = user.schoolOccupation
+//        cell.skillsLabel.text = user.skills
+//        cell.desiredSkillsLabel.text = user.desiredSkills
+//        cell.locationLabel.text = user.location
+//        cell.mentorMenteeLabel.text = user.mentorOrMentee
         return cell
     }
-    
-   // var messagesController: MessagesController?
-    
-//    func collectionView(_ collectionView: UICollectionView, didSelectRowAtIndexPath indexPath: IndexPath) {
-//        dismiss(animated: true){
-//            print("Dismiss completed")
-//        }
-//      //  let user = self.users[indexPath.row]
-//       // self.messag
-//    }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
         print("Did Select")
     }
-
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+  
+        print(searchBar.text)
+        filteredUserList = usersList.filter({ (user : UserModel) -> Bool in
+            searching = true
+            return user.skills!.lowercased().contains(searchText.lowercased())
+        })
+        userCollection.reloadData()
+        
+        if (searchBar.text?.isEmpty)! {
+            searching = false
+        }
+    }
 }
+
+

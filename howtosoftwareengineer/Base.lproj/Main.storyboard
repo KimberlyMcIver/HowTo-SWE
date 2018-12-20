@@ -338,7 +338,7 @@
                                 <color key="currentPageIndicatorTintColor" red="0.4677066144" green="1" blue="0.2888439129" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ed-lq-6vW">
-                                <rect key="frame" x="0.0" y="71" width="375" height="561"/>
+                                <rect key="frame" x="0.0" y="121" width="375" height="511"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jd6-fn-kp5">
@@ -451,6 +451,14 @@
                                     <outlet property="delegate" destination="60A-LZ-UwK" id="WB4-iz-TS8"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOr-lQ-XdO">
+                                <rect key="frame" x="0.0" y="65" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="60A-LZ-UwK" id="8pb-0I-5yu"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.95205336809999996" green="1" blue="0.97263008360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="i3i-g2-utD"/>
