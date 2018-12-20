@@ -16,7 +16,6 @@ class ChatLogViewController: UICollectionViewController, UITextFieldDelegate, UI
     var user: UserModel? {
         didSet {
             navigationItem.title = user?.firstName
-            
             observeMessages()
         }
     }
@@ -75,7 +74,6 @@ class ChatLogViewController: UICollectionViewController, UITextFieldDelegate, UI
     func setupInputComponents() {
         
         let containerView = UIView()
-        //containerView.backgroundColor = UIColor.lightGray
         containerView.backgroundColor = UIColor.white
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -111,9 +109,7 @@ class ChatLogViewController: UICollectionViewController, UITextFieldDelegate, UI
         let toId = user!.id!
         let fromId = Auth.auth().currentUser!.uid
         let timestamp = NSDate().timeIntervalSince1970
-        //let values = ["text": inputTextField.text!, "name" : user!.firstName!]
         let values = ["text": inputTextField.text!, "toId" : toId, "fromId": fromId, "timestamp": timestamp] as [String : Any]
-        
         
         childRef.updateChildValues(values) { (error, ref) in
             if error != nil {
@@ -132,7 +128,6 @@ class ChatLogViewController: UICollectionViewController, UITextFieldDelegate, UI
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return 10
         return messages.count
     }
     
@@ -142,19 +137,32 @@ class ChatLogViewController: UICollectionViewController, UITextFieldDelegate, UI
         
         let message = messages[indexPath.item]
         cell.textView.text = message.text
+        
+        if message.fromId == Auth.auth().currentUser?.uid {
+            cell.bubbleView.backgroundColor = UIColor.blue
+            cell.textView.textColor = UIColor.white
+            
+            cell.textViewLeftAnchor?.isActive = false
+            cell.textViewRightAnchor?.isActive = true
+            cell.bubbleViewRightAnchor?.isActive = true
+            cell.bubbleViewLeftAnchor?.isActive = false
+            
+        } else {
+            cell.bubbleView.backgroundColor = UIColor.lightGray
+            cell.textView.textColor = UIColor.black
+            
+            cell.textViewLeftAnchor?.isActive = true
+            cell.textViewRightAnchor?.isActive = false
+            cell.bubbleViewRightAnchor?.isActive = false
+            cell.bubbleViewLeftAnchor?.isActive = true
+        }
+        
         return cell
-       // return cell
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 80)
     }
-    
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        handleSend(_sender: sendButton)
-//        return true
-//    }
 
-    
 }

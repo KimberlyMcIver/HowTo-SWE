@@ -27,8 +27,6 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         super.viewDidLoad()
         self.dataSource = self
 
-      //  let secondVC = viewControllerList.index(viewControllerList.startIndex, offsetBy: 2)
-
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
@@ -61,16 +59,5 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         
         return viewControllerList[nextIndex]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

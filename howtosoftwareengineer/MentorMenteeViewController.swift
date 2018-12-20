@@ -79,7 +79,6 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource, 
         } else {
             return usersList.count
         }
-       // return usersList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,15 +108,6 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource, 
             cell.locationLabel.text = user.location
             cell.mentorMenteeLabel.text = user.mentorOrMentee
         }
-        
-//        let user: UserModel
-//        user = usersList[indexPath.row]
-//        cell.nameLabel.text = user.firstName
-//        cell.occupationLabel.text = user.schoolOccupation
-//        cell.skillsLabel.text = user.skills
-//        cell.desiredSkillsLabel.text = user.desiredSkills
-//        cell.locationLabel.text = user.location
-//        cell.mentorMenteeLabel.text = user.mentorOrMentee
         return cell
     }
 
@@ -126,8 +116,6 @@ class MentorMenteeViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-  
-        print(searchBar.text)
         filteredUserList = usersList.filter({ (user : UserModel) -> Bool in
             searching = true
             return user.skills!.lowercased().contains(searchText.lowercased())

@@ -46,7 +46,6 @@ class ResourcesViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func signOutButtonTapped(_ sender: UIButton){
-        // self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
         print("sign out sucessful")
     }
     

@@ -451,7 +451,7 @@
                                     <outlet property="delegate" destination="60A-LZ-UwK" id="WB4-iz-TS8"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOr-lQ-XdO">
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search User's Skills" translatesAutoresizingMaskIntoConstraints="NO" id="iOr-lQ-XdO">
                                 <rect key="frame" x="0.0" y="65" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>

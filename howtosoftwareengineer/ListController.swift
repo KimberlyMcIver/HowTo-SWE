@@ -21,8 +21,6 @@ class ListController: UITableViewController {
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         
         fetchUser()
-        
-       // observeMessages()
     }
     
     func observeMessages() {
@@ -35,8 +33,6 @@ class ListController: UITableViewController {
                 print(message.text)
                 
             }
-            
-          //  print(snapshot)
             
         }, withCancel: nil)
     }
@@ -79,8 +75,7 @@ class ListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+     
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         let user = users[indexPath.row]
