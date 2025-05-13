@@ -26,7 +26,6 @@ See `/docs` or attached project PDF for mockups of:
 - Mentor matching UI
 
 ## Status
-✅ Fully functional prototype (not published on the App Store)  
 🎓 Built for university coursework (CSC 699 – Independent Study)  
 🧠 Designed and developed solo
 
